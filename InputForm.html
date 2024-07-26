@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #e35151;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+          }
+      
+          .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+          }
+      
+          h2 {
+            color: #333;
+            margin-bottom: 20px;
+          }
+      
+          input[type="text"],
+          input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+          }
+      
+          input[type="text"]:focus,
+          input[type="email"]:focus {
+            border-color: #4caf50;
+            outline: none;
+          }
+      
+          button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+      
+          button:hover {
+            background-color: #45a049;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="form-container">
+          <h2>Sign Up</h2>
+          <form id="myForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      
+        <script>
+          document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            
+            if (name && email) {
+              alert("Form submitted successfully!");
+            } else {
+              alert("Please fill out all fields.");
+            }
+          });
+        </script>
+      </body>
+      </html>
